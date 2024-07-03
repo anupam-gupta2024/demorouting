@@ -1,0 +1,61 @@
+<hr class="my-5">
+
+<div class="card">
+    <div class="card-body">
+        <form #frm = "ngForm" (ngSubmit)="updateInfo(frm)">
+            <div class="form-group">
+                <label for="location">Add Location</label>
+                <input type="text" class="form-control" id="location" name="location" placeholder="Enter Location" ngModel>
+                <small id="emailHelp" class="form-text text-muted">Please add employee location.</small>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Info</button>
+        </form>
+    </div>
+</div>
+
+<br>
+
+<div class="card">
+    <div class="card-body">
+        <table class="table text-center">
+            <colgroup>
+                <col style="width:33%">
+                <col style="width:33%">
+                <col style="width:33%">
+            </colgroup>
+            <tr>
+                <td>
+                    <button type="button" name="button" (click)="getInfoFromService1()"
+                        class="btn btn-secondary">Employee1</button>
+
+                </td>
+                <td>
+                    <button type="button" name="button" (click)="getInfoFromService2()"
+                        class="btn btn-secondary">Employee2</button>
+                </td>
+                <td>
+                    <button type="button" name="button" (click)="getInfoFromService3()"
+                        class="btn btn-secondary">Employee3</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul class="list-group">
+                        <li *ngFor="let info of infoReceived1" class="list-group-item">{{info}}</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul class="list-group">
+                        <li *ngFor="let info of infoReceived2" class="list-group-item">{{info}}</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul class="list-group">
+                        <li *ngFor="let info of infoReceived3" class="list-group-item">{{info}}</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
